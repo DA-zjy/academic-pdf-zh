@@ -8,8 +8,8 @@ __pycache__/
 demo/.build/
 work/
 
-# 打包产物
-*.zip
+# 打包产物（仅仓库根；站点下载包 docs/samples/*/sample.zip 必须入库）
+/*.zip
 
 # 编辑器/系统
 .DS_Store
