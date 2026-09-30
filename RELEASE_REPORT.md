@@ -88,10 +88,18 @@
   ⑥ `demo/deepseek-r1/` + `demo/papers/`（约 20 个，含 3 个 PDF）。
   或使用 Git 命令行一次性推送（如本地可用）。
 
-## 五、未执行项目与剩余事项
+## 五、部署记录（2026-09-30 更新）
 
-1. **线上部署未执行**：按指令未创建远程仓库/未推送。本地验收完成，线上尚未上线；
-   Pages 地址、README 顶部演示链接与 `site.config.json` 的 `github.owner` 需在发布后替换/填写（见 DEPLOY.md 第五节）。
+- 仓库：`DA-zjy/academic-pdf-zh`（public），提交署名 DA-zjy <jinyuan-23@mails.tsinghua.edu.cn>
+- Pages：main 分支 `/docs`，Deploy from a branch；上线地址 **https://da-zjy.github.io/academic-pdf-zh/**
+- 首次上线验证：首页/播放器/三篇阅读页/三份报告页/图片/字体/`.nojekyll` 全部 200
+- 上线后修正：`.gitignore` 由 `*.zip` 改为根目录锚定 `/*.zip`，使 `docs/samples/*/sample.zip`
+  进入版本库（首次提交被 ignore 排除导致线上 404），随后补提交并确认线上 200
+- README 演示入口与 `site.config.json` 的 `github.owner` 已回填真实地址/用户名
+
+## 六、未执行项目与剩余事项
+
+1. **语义质量**：自动检查与目视覆盖结构/渲染层；翻译语义正确性未做逐句审校（不在本轮范围）。
 2. **LICENSE 缺失**：仓库无 LICENSE 文件，本轮不代为选择许可证（THIRD_PARTY_NOTICES.md 已注明待定）。
 3. **语义质量**：自动检查与目视覆盖结构/渲染层；翻译语义正确性未做逐句审校（不在本轮范围）。
 4. **reduced-motion**：阅读页无动画不涉及；动画主页的 prefers-reduced-motion 代码路径沿用上一轮实现，

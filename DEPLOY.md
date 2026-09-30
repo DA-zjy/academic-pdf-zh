@@ -1,5 +1,9 @@
 # 部署说明（GitHub Pages，Deploy from a branch）
 
+> **当前状态（2026-09-30）**：已发布至 **https://da-zjy.github.io/academic-pdf-zh/**
+> （仓库 `DA-zjy/academic-pdf-zh`，main 分支 `/docs`，Deploy from a branch）。
+> 更新网站：改内容 → 重新构建 → `git push`，Pages 会自动重建，无需再改部署设置。
+
 本项目的网站是**纯静态预生成目录**：网站的全部内容都在 `docs/` 里（主页、动画播放器、
 三篇样章阅读页、校验报告页、下载包、vendored KaTeX/GSAP）。GitHub Pages 只负责托管，
 不需要任何构建任务、Jekyll 配置或自定义域名。

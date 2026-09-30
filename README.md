@@ -8,7 +8,7 @@
 
 [![pipeline](https://img.shields.io/badge/pipeline-9_phases_A--I-blueviolet)](#-流水线总览) [![validation](https://img.shields.io/badge/demo-3%2F3_PASS-brightgreen)](demo/) [![no API](https://img.shields.io/badge/translation%20API-none_required-orange)](#) [![Obsidian](https://img.shields.io/badge/output-Obsidian_ready-7053f6)](assets/obsidian-research.css) [![platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)]()
 
-[✨ 演示与样章阅读站（docs/，发布后为 Pages 首页）](docs/index.html) · [📖 样章阅读页](docs/samples/) · [📦 快速开始](#-快速开始) · [🧪 三篇经典论文真实 Demo](demo/) · [🛡️ 为什么更难翻错](#-五道安全门)
+[✨ 在线演示与样章阅读站](https://da-zjy.github.io/academic-pdf-zh/) · [📖 样章阅读页](https://da-zjy.github.io/academic-pdf-zh/samples/) · [📦 快速开始](#-快速开始) · [🧪 三篇经典论文真实 Demo](demo/) · [🛡️ 为什么更难翻错](#-五道安全门)
 
 </div>
 

@@ -4,13 +4,22 @@
     "tagline": "英文学术 PDF，变成可精读的中文 Markdown。",
     "description": "把英文学术论文 PDF 翻译成保留公式、表格与数字的中文 Markdown。站内阅读页基于已有样章的真实译文。",
     "samplesNav": [
-      { "key": "transformer", "label": "Transformer 样章" },
-      { "key": "resnet", "label": "ResNet 样章" },
-      { "key": "deepseek-r1", "label": "DeepSeek-R1 样章" }
+      {
+        "key": "transformer",
+        "label": "Transformer 样章"
+      },
+      {
+        "key": "resnet",
+        "label": "ResNet 样章"
+      },
+      {
+        "key": "deepseek-r1",
+        "label": "DeepSeek-R1 样章"
+      }
     ]
   },
   "github": {
-    "owner": null,
+    "owner": "DA-zjy",
     "repo": "academic-pdf-zh",
     "note": "owner 填写真实用户名后，站点与文档中的仓库按钮/线上地址才生效；为空时站内仅使用相对链接。"
   },
