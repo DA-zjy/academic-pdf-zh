@@ -1,0 +1,56 @@
+{
+  "generatedAt": "2026-09-29",
+  "papers": {
+    "transformer": {
+      "sourceTranslation": {
+        "path": "demo/transformer/transformer_中文.md",
+        "sha256": "918dfdc2dad52359994b3c116a009e65ccc52dc4b828ee649d5c62fd0bc8e590"
+      },
+      "publicTranslation": {
+        "path": "docs/samples/transformer/translation.md",
+        "sha256": "918dfdc2dad52359994b3c116a009e65ccc52dc4b828ee649d5c62fd0bc8e590"
+      },
+      "validation": {
+        "path": "demo/transformer/validation.md",
+        "sha256": "7ec1c11edf7915bc45f1687ca570d9e9041054b4549e9a6db874ff0bd7499dcb",
+        "publicCopy": "docs/samples/transformer/validation.md"
+      },
+      "sampleZip": "docs/samples/transformer/sample.zip",
+      "pagesNote": "第 1–6 页节选"
+    },
+    "resnet": {
+      "sourceTranslation": {
+        "path": "demo/resnet/resnet_中文.md",
+        "sha256": "dcb1bd58cd8b2bf4a92aa570db74184a0839d101901573050821e3d2924ba3c5"
+      },
+      "publicTranslation": {
+        "path": "docs/samples/resnet/translation.md",
+        "sha256": "dcb1bd58cd8b2bf4a92aa570db74184a0839d101901573050821e3d2924ba3c5"
+      },
+      "validation": {
+        "path": "demo/resnet/validation.md",
+        "sha256": "bd6f2237933ed0d865f7701eee91a50fb9a805b859d565badecd31abed81c564",
+        "publicCopy": "docs/samples/resnet/validation.md"
+      },
+      "sampleZip": "docs/samples/resnet/sample.zip",
+      "pagesNote": "第 1–3 页节选"
+    },
+    "deepseek-r1": {
+      "sourceTranslation": {
+        "path": "demo/deepseek-r1/deepseek-r1_中文.md",
+        "sha256": "f1e48fc153f23fee8b714cf076424eceb6e224f35ced704a1fa9127cdaa84307"
+      },
+      "publicTranslation": {
+        "path": "docs/samples/deepseek-r1/translation.md",
+        "sha256": "f1e48fc153f23fee8b714cf076424eceb6e224f35ced704a1fa9127cdaa84307"
+      },
+      "validation": {
+        "path": "demo/deepseek-r1/validation.md",
+        "sha256": "10140f6c9de4f5d72f6e87660849b70ec03cb84c04424e88cf47dc695fe95164",
+        "publicCopy": "docs/samples/deepseek-r1/validation.md"
+      },
+      "sampleZip": "docs/samples/deepseek-r1/sample.zip",
+      "pagesNote": "第 1–5 页节选"
+    }
+  }
+}

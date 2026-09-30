@@ -1,0 +1,174 @@
+{
+  "id": "T0001",
+  "format": "markdown",
+  "template": "\n|[[CELL_C0001]]|[[CELL_C0002]]|[[CELL_C0003]]|[[CELL_C0004]]|\n|---|---|---|---|\n|[[CELL_C0005]]|[[CELL_C0006]]|[[CELL_C0007]]|[[CELL_C0008]]|\n|[[CELL_C0009]]|[[CELL_C0010]]|[[CELL_C0011]]|[[CELL_C0012]]|\n|[[CELL_C0013]]|[[CELL_C0014]]|[[CELL_C0015]]|[[CELL_C0016]]|\n|[[CELL_C0017]]|[[CELL_C0018]]|[[CELL_C0019]]|[[CELL_C0020]]|",
+  "original": "\n|Layer Type|Complexity per Layer|Sequential<br>Operations|Maximum Path Length|\n|---|---|---|---|\n|Self-Attention|O(n² · d)|O(1)|O(1)|\n|Recurrent|O(n · d²)|O(n)|O(n)|\n|Convolutional|O(k · n · d²)|O(1)|O(logₖ(n))|\n|Self-Attention (restricted)|O(r · n · d)|O(1)|O(n/r)|\n\n",
+  "cells": [
+    {
+      "id": "C0001",
+      "source": "Layer Type",
+      "source_for_translation": "Layer Type",
+      "protected": [],
+      "translation": "层类型"
+    },
+    {
+      "id": "C0002",
+      "source": "Complexity per Layer",
+      "source_for_translation": "Complexity per Layer",
+      "protected": [],
+      "translation": "每层复杂度"
+    },
+    {
+      "id": "C0003",
+      "source": "Sequential<br>Operations",
+      "source_for_translation": "Sequential<br>Operations",
+      "protected": [],
+      "translation": "串行<br>操作数"
+    },
+    {
+      "id": "C0004",
+      "source": "Maximum Path Length",
+      "source_for_translation": "Maximum Path Length",
+      "protected": [],
+      "translation": "最大路径长度"
+    },
+    {
+      "id": "C0005",
+      "source": "Self-Attention",
+      "source_for_translation": "Self-Attention",
+      "protected": [],
+      "translation": "自注意力"
+    },
+    {
+      "id": "C0006",
+      "source": "O(n² · d)",
+      "source_for_translation": "O(n² · d)",
+      "protected": [],
+      "translation": "O(n² · d)"
+    },
+    {
+      "id": "C0007",
+      "source": "O(1)",
+      "source_for_translation": "O([[TCP_P001]])",
+      "protected": [
+        {
+          "id": "P001",
+          "value": "1"
+        }
+      ],
+      "translation": "O([[TCP_P001]])"
+    },
+    {
+      "id": "C0008",
+      "source": "O(1)",
+      "source_for_translation": "O([[TCP_P001]])",
+      "protected": [
+        {
+          "id": "P001",
+          "value": "1"
+        }
+      ],
+      "translation": "O([[TCP_P001]])"
+    },
+    {
+      "id": "C0009",
+      "source": "Recurrent",
+      "source_for_translation": "Recurrent",
+      "protected": [],
+      "translation": "循环"
+    },
+    {
+      "id": "C0010",
+      "source": "O(n · d²)",
+      "source_for_translation": "O(n · d²)",
+      "protected": [],
+      "translation": "O(n · d²)"
+    },
+    {
+      "id": "C0011",
+      "source": "O(n)",
+      "source_for_translation": "O(n)",
+      "protected": [],
+      "translation": "O(n)"
+    },
+    {
+      "id": "C0012",
+      "source": "O(n)",
+      "source_for_translation": "O(n)",
+      "protected": [],
+      "translation": "O(n)"
+    },
+    {
+      "id": "C0013",
+      "source": "Convolutional",
+      "source_for_translation": "Convolutional",
+      "protected": [],
+      "translation": "卷积"
+    },
+    {
+      "id": "C0014",
+      "source": "O(k · n · d²)",
+      "source_for_translation": "O(k · n · d²)",
+      "protected": [],
+      "translation": "O(k · n · d²)"
+    },
+    {
+      "id": "C0015",
+      "source": "O(1)",
+      "source_for_translation": "O([[TCP_P001]])",
+      "protected": [
+        {
+          "id": "P001",
+          "value": "1"
+        }
+      ],
+      "translation": "O([[TCP_P001]])"
+    },
+    {
+      "id": "C0016",
+      "source": "O(logₖ(n))",
+      "source_for_translation": "O(logₖ(n))",
+      "protected": [],
+      "translation": "O(logₖ(n))"
+    },
+    {
+      "id": "C0017",
+      "source": "Self-Attention (restricted)",
+      "source_for_translation": "Self-Attention (restricted)",
+      "protected": [],
+      "translation": "自注意力（受限）"
+    },
+    {
+      "id": "C0018",
+      "source": "O(r · n · d)",
+      "source_for_translation": "O(r · n · d)",
+      "protected": [],
+      "translation": "O(r · n · d)"
+    },
+    {
+      "id": "C0019",
+      "source": "O(1)",
+      "source_for_translation": "O([[TCP_P001]])",
+      "protected": [
+        {
+          "id": "P001",
+          "value": "1"
+        }
+      ],
+      "translation": "O([[TCP_P001]])"
+    },
+    {
+      "id": "C0020",
+      "source": "O(n/r)",
+      "source_for_translation": "O(n/r)",
+      "protected": [],
+      "translation": "O(n/r)"
+    }
+  ],
+  "numeric_tokens": [
+    "1",
+    "1",
+    "1",
+    "1"
+  ]
+}

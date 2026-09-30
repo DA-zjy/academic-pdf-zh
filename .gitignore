@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.venv-site/
+
+# 构建中间物（重新运行流水线时会生成；翻译成品在 demo/ 下，不受影响）
+demo/.build/
+work/
+
+# 打包产物
+*.zip
+
+# 编辑器/系统
+.DS_Store
+Thumbs.db

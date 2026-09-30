@@ -1,0 +1,52 @@
+{
+  "site": {
+    "title": "academic-pdf-zh",
+    "tagline": "英文学术 PDF，变成可精读的中文 Markdown。",
+    "description": "把英文学术论文 PDF 翻译成保留公式、表格与数字的中文 Markdown。站内阅读页基于已有样章的真实译文。",
+    "samplesNav": [
+      { "key": "transformer", "label": "Transformer 样章" },
+      { "key": "resnet", "label": "ResNet 样章" },
+      { "key": "deepseek-r1", "label": "DeepSeek-R1 样章" }
+    ]
+  },
+  "github": {
+    "owner": null,
+    "repo": "academic-pdf-zh",
+    "note": "owner 填写真实用户名后，站点与文档中的仓库按钮/线上地址才生效；为空时站内仅使用相对链接。"
+  },
+  "papers": [
+    {
+      "key": "transformer",
+      "dir": "demo/transformer",
+      "file": "transformer_中文.md",
+      "titleCn": "Attention Is All You Need（注意力就是你所需要的一切）",
+      "titleEn": "Attention Is All You Need",
+      "venue": "NeurIPS 2017",
+      "sourceLink": "https://arxiv.org/abs/1706.03762",
+      "sourceNote": "arXiv:1706.03762 · 外部来源",
+      "pagesNote": null
+    },
+    {
+      "key": "resnet",
+      "dir": "demo/resnet",
+      "file": "resnet_中文.md",
+      "titleCn": "深度残差学习用于图像识别",
+      "titleEn": "Deep Residual Learning for Image Recognition",
+      "venue": "CVPR 2016",
+      "sourceLink": "https://arxiv.org/abs/1512.03385",
+      "sourceNote": "arXiv:1512.03385 · 外部来源",
+      "pagesNote": null
+    },
+    {
+      "key": "deepseek-r1",
+      "dir": "demo/deepseek-r1",
+      "file": "deepseek-r1_中文.md",
+      "titleCn": "DeepSeek-R1：通过强化学习激励 LLM 的推理能力",
+      "titleEn": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
+      "venue": "arXiv 2501.12948",
+      "sourceLink": "https://arxiv.org/abs/2501.12948",
+      "sourceNote": "arXiv:2501.12948 · 外部来源",
+      "pagesNote": null
+    }
+  ]
+}

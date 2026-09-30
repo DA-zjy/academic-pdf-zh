@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>academic-pdf-zh · 演示视图</title>
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
+<link rel="stylesheet" href="demo.css">
+</head>
+<body class="playerview">
+
+<div class="stage-wrap">
+  <div class="stage" id="stage">
+    <div class="viewport">
+      <div class="canvas" id="canvas">
+        <div class="paper" id="paperEn">
+          <div class="body-src"><div class="inner"></div></div>
+        </div>
+        <div class="paper mini" id="paperCn">
+          <div class="inner"></div>
+        </div>
+      </div>
+    </div>
+    <div class="endmask" id="endmask">
+      <button class="replay" id="maskReplay">↻ 重播演示</button>
+    </div>
+    <button class="bigplay" id="bigPlay">
+      <span class="disc"><svg width="30" height="34" viewBox="0 0 30 34"><path d="M3 2l25 15L3 32z" fill="#fff"/></svg></span>
+      <span class="label">播放演示 · 36 秒</span>
+    </button>
+    <span class="chip rm-note" id="rmNote">已按系统「减少动态效果」偏好暂停动画：显示最终结果</span>
+  </div>
+</div>
+
+<div class="controls" id="controls">
+  <button class="ctl-btn primary" id="btnPlay" title="播放"></button>
+  <div class="scrub-wrap">
+    <div class="scrub" id="scrub" aria-label="进度">
+      <div class="fill"></div>
+      <div class="knob"></div>
+    </div>
+  </div>
+  <span class="time" id="timeLabel">0:00 / 0:36</span>
+  <span class="chapter-now" id="chapterNow">结果</span>
+  <button class="ctl-btn" id="btnReplay">↻ 重播</button>
+</div>
+<a class="backlink" href="index.html">← 返回主页</a>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/katex/katex.min.js"></script>
+<script src="demo-data.js"></script>
+<script src="demo.js"></script>
+<script>
+/* 录制视图：控制条闲置 2.5s 自动隐藏；?autoplay=1 直接开播（配合录屏） */
+(function () {
+  var bar = document.getElementById("controls");
+  var timer = null;
+  function wake() {
+    bar.classList.remove("hide");
+    clearTimeout(timer);
+    timer = setTimeout(function () { bar.classList.add("hide"); }, 2500);
+  }
+  ["pointermove", "pointerdown", "keydown"].forEach(function (ev) {
+    window.addEventListener(ev, wake, { passive: true });
+  });
+  wake();
+})();
+</script>
+</body>
+</html>

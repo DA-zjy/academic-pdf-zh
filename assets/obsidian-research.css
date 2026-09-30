@@ -1,0 +1,9 @@
+/* Optional Obsidian snippet for files with cssclasses: research-paper */
+.research-paper .inline-title { display: none; }
+.research-paper .markdown-preview-sizer,
+.research-paper .cm-contentContainer { max-width: 980px; margin: 0 auto; }
+.research-paper .markdown-preview-view p { line-height: 1.78; }
+.research-paper img { display: block; margin: 1.2rem auto; max-width: 100%; height: auto; }
+.research-paper table { display: block; overflow-x: auto; white-space: nowrap; margin: 1rem 0; }
+.research-paper details { margin: .75rem 0 1rem; }
+.research-paper h2 { margin-top: 2rem; }

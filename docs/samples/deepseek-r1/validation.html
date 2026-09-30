@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>结构校验报告 · DeepSeek-R1 样章 · academic-pdf-zh</title>
+<meta name="description" content="已有 validation.md 终检报告的网页展示，指标与状态原样保留。">
+<link rel="stylesheet" href="../../vendor/katex/katex.min.css">
+<script defer src="../../vendor/katex/katex.min.js"></script>
+<script defer src="../../vendor/katex/plugins/auto-render.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var el = document.getElementById('article');
+  if (!el || !window.renderMathInElement) return;
+  var errs = [];
+  renderMathInElement(el, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '\\[', right: '\\]', display: true},
+      {left: '\\(', right: '\\)', display: false},
+      {left: '$', right: '$', display: false}
+    ],
+    ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+    throwOnError: false,
+    strict: 'ignore',
+    errorCallback: function (msg) { errs.push(String(msg && msg.message || msg)); console.warn('KaTeX 无法渲染，保留原文：', msg); }
+  });
+  if (errs.length) { el.dataset.katexErrors = errs.length; console.warn('KaTeX 渲染失败条数：', errs.length); }
+});
+</script>
+
+<link rel="stylesheet" href="../../reader.css">
+</head>
+<body class="reader">
+<header class="reader-top">
+  <div class="reader-top-in">
+    <a class="home" href="../../index.html">← 返回主页</a>
+    <span class="crumb">DeepSeek-R1 样章</span>
+    <nav class="actions">
+      <a href="translation.md" download>下载 Markdown</a>
+      <a href="sample.zip" download>下载 Markdown＋图片</a>
+      <a href="validation.html">结构校验报告</a>
+    </nav>
+  </div>
+</header>
+<div class="reader-band">
+  <p><b>报告展示</b>：本页是既有 <code>validation.md</code> 终检报告的网页版，指标与状态原样保留。</p>
+</div>
+<div class="reader-shell">
+  
+  <main class="paper" id="article">
+<div class="reader-band"><p><b>报告展示</b>：本页是已有 <code>validation.md</code>（由翻译流水线的终检脚本生成）的网页展示，指标与状态原样保留；不是本次网站构建重新执行校验的结果。</p></div><h1 id="academic-pdf-chinese-validation">Academic PDF Chinese Validation</h1>
+<h2 id="metrics">Metrics</h2>
+<ul>
+<li>Manifest blocks: 40</li>
+<li>Source / translated headings: 7 / 7</li>
+<li>Source / translated tables: 1 / 1</li>
+<li>Source / translated images: 2 / 2</li>
+<li>Source / translated LaTeX expressions: 24 / 24</li>
+<li>CJK chars per source English word: 1.671</li>
+</ul>
+<h2 id="material-issues">Material issues</h2>
+<ul>
+<li>None detected.</li>
+</ul>
+<h2 id="review-items">Review items</h2>
+<ul>
+<li>None.</li>
+</ul>
+<h2 id="status">Status</h2>
+<p><strong>PASS</strong></p>
+  </main>
+</div>
+<footer class="reader-foot">
+  <p>来源文件：<code>demo/deepseek-r1/validation.md</code> · 译文 sha256 前 12 位：<code>-</code> · 网页由 <code>scripts/build_site.py</code> 于 2026-09-29 从该文件生成，未改写译文内容。</p>
+</footer>
+</body>
+</html>

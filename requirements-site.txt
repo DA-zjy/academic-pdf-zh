@@ -1,0 +1,11 @@
+# 站点构建（build_site.py / check_site.py）专用依赖 —— 与翻译流水线依赖无关
+#
+# 本仓库已在 scripts/_site_libs/ 内置了 Markdown 3.11 的纯 Python 源码副本
+# （零第三方依赖），因此 `python scripts/build_site.py` 在无网络环境下也可直接运行。
+# 如需用 pip 安装到独立环境，请使用下方经本仓库验证过的版本：
+#
+#   python -m venv .venv-site
+#   source .venv-site/bin/activate        # Windows: .venv-site\Scripts\activate
+#   python -m pip install -r requirements-site.txt
+#
+markdown==3.11

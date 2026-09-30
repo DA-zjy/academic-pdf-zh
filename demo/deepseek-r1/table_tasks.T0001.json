@@ -1,0 +1,120 @@
+{
+  "id": "T0001",
+  "format": "markdown",
+  "template": "\n|[[CELL_C0001]]|[[CELL_C0002]]|\n|---|---|\n|[[CELL_C0003]]|[[CELL_C0004]]|",
+  "original": "\n|Question|If $a > 1$, then the sum of the real solutions of $\\sqrt{a - \\sqrt{a + x}} = x$ is equal to|\n|---|---|\n|Response|`<think>` To solve the equation $\\sqrt{a - \\sqrt{a + x}} = x$, let's start by squaring both $\\cdots$ $\\left(\\sqrt{a - \\sqrt{a+x}}\\right)^2 = x^2 \\implies a - \\sqrt{a+x} = x^2$. Rearrange to isolate the inner square root term: $(a - x^2)^2 = a + x \\implies a^2 - 2ax^2 + (x^2)^2 = a + x \\implies x^4 - 2ax^2 - x + (a^2 - a) = 0$ $\\cdots$ Wait, wait. Wait. That's an aha moment I can flag here. Let's reevaluate this step-by-step to identify if the correct sum can be $\\cdots$ We started with the equation: $\\sqrt{a - \\sqrt{a+x}} = x$ First, let's square both sides: $a - \\sqrt{a+x} = x^2 \\implies \\sqrt{a+x} = a - x^2$ Next, I could square both sides again, treating the equation: $\\cdots$ $\\cdots$|\n\n",
+  "cells": [
+    {
+      "id": "C0001",
+      "source": "Question",
+      "source_for_translation": "Question",
+      "protected": [],
+      "translation": "问题"
+    },
+    {
+      "id": "C0002",
+      "source": "If $a > 1$, then the sum of the real solutions of $\\sqrt{a - \\sqrt{a + x}} = x$ is equal to",
+      "source_for_translation": "If $a > [[TCP_P001]]$, then the sum of the real solutions of $\\sqrt{a - \\sqrt{a + x}} = x$ is equal to",
+      "protected": [
+        {
+          "id": "P001",
+          "value": "1"
+        }
+      ],
+      "translation": "若 $a > [[TCP_P001]]$，那么 $\\sqrt{a - \\sqrt{a + x}} = x$ 的全部实数解之和等于"
+    },
+    {
+      "id": "C0003",
+      "source": "Response",
+      "source_for_translation": "Response",
+      "protected": [],
+      "translation": "回答"
+    },
+    {
+      "id": "C0004",
+      "source": "<think> To solve the equation $\\sqrt{a - \\sqrt{a + x}} = x$, let's start by squaring both $\\cdots$ $\\left(\\sqrt{a - \\sqrt{a+x}}\\right)^2 = x^2 \\implies a - \\sqrt{a+x} = x^2$. Rearrange to isolate the inner square root term: $(a - x^2)^2 = a + x \\implies a^2 - 2ax^2 + (x^2)^2 = a + x \\implies x^4 - 2ax^2 - x + (a^2 - a) = 0$ $\\cdots$ Wait, wait. Wait. That's an aha moment I can flag here. Let's reevaluate this step-by-step to identify if the correct sum can be $\\cdots$ We started with the equation: $\\sqrt{a - \\sqrt{a+x}} = x$ First, let's square both sides: $a - \\sqrt{a+x} = x^2 \\implies \\sqrt{a+x} = a - x^2$ Next, I could square both sides again, treating the equation: $\\cdots$ $\\cdots$",
+      "source_for_translation": "<think> To solve the equation $\\sqrt{a - \\sqrt{a + x}} = x$, let's start by squaring both $\\cdots$ $\\left(\\sqrt{a - \\sqrt{a+x}}\\right)^[[TCP_P001]] = x^[[TCP_P002]] \\implies a - \\sqrt{a+x} = x^[[TCP_P003]]$. Rearrange to isolate the inner square root term: $(a - x^[[TCP_P004]])^[[TCP_P005]] = a + x \\implies a^[[TCP_P006]] - 2ax^[[TCP_P007]] + (x^[[TCP_P008]])^[[TCP_P009]] = a + x \\implies x^[[TCP_P010]] - 2ax^[[TCP_P011]] - x + (a^[[TCP_P012]] - a) = [[TCP_P013]]$ $\\cdots$ Wait, wait. Wait. That's an aha moment I can flag here. Let's reevaluate this step-by-step to identify if the correct sum can be $\\cdots$ We started with the equation: $\\sqrt{a - \\sqrt{a+x}} = x$ First, let's square both sides: $a - \\sqrt{a+x} = x^[[TCP_P014]] \\implies \\sqrt{a+x} = a - x^[[TCP_P015]]$ Next, I could square both sides again, treating the equation: $\\cdots$ $\\cdots$",
+      "protected": [
+        {
+          "id": "P001",
+          "value": "2"
+        },
+        {
+          "id": "P002",
+          "value": "2"
+        },
+        {
+          "id": "P003",
+          "value": "2"
+        },
+        {
+          "id": "P004",
+          "value": "2"
+        },
+        {
+          "id": "P005",
+          "value": "2"
+        },
+        {
+          "id": "P006",
+          "value": "2"
+        },
+        {
+          "id": "P007",
+          "value": "2"
+        },
+        {
+          "id": "P008",
+          "value": "2"
+        },
+        {
+          "id": "P009",
+          "value": "2"
+        },
+        {
+          "id": "P010",
+          "value": "4"
+        },
+        {
+          "id": "P011",
+          "value": "2"
+        },
+        {
+          "id": "P012",
+          "value": "2"
+        },
+        {
+          "id": "P013",
+          "value": "0"
+        },
+        {
+          "id": "P014",
+          "value": "2"
+        },
+        {
+          "id": "P015",
+          "value": "2"
+        }
+      ],
+      "translation": "<think> 为求解方程 $\\sqrt{a - \\sqrt{a + x}} = x$，我们先对方程两边平方 $\\cdots$ $\\left(\\sqrt{a - \\sqrt{a+x}}\\right)^[[TCP_P001]] = x^[[TCP_P002]] \\implies a - \\sqrt{a+x} = x^[[TCP_P003]]$。整理以分离内层平方根项：$(a - x^[[TCP_P004]])^[[TCP_P005]] = a + x \\implies a^[[TCP_P006]] - 2ax^[[TCP_P007]] + (x^[[TCP_P008]])^[[TCP_P009]] = a + x \\implies x^[[TCP_P010]] - 2ax^[[TCP_P011]] - x + (a^[[TCP_P012]] - a) = [[TCP_P013]]$ $\\cdots$ 等等，等等，等等。这是我能够在此标记的一个“aha 时刻”。让我们逐步重新评估，确认正确的解之和是否可以为 $\\cdots$ 我们从方程开始：$\\sqrt{a - \\sqrt{a+x}} = x$ 首先，对方程两边平方：$a - \\sqrt{a+x} = x^[[TCP_P014]] \\implies \\sqrt{a+x} = a - x^[[TCP_P015]]$ 接下来，我可以再次对方程两边平方，把方程视为：$\\cdots$ $\\cdots$"
+    }
+  ],
+  "numeric_tokens": [
+    "1",
+    "2",
+    "2",
+    "2",
+    "2",
+    "2",
+    "2",
+    "2",
+    "2",
+    "2",
+    "4",
+    "2",
+    "2",
+    "0",
+    "2",
+    "2"
+  ]
+}

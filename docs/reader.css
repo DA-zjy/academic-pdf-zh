@@ -1,0 +1,176 @@
+/* academic-pdf-zh · 样章阅读页（浅色纸张，中文优先） */
+
+:root {
+  --paper: #f7f5ef;
+  --paper-2: #efecdf;
+  --ink: #23262f;
+  --ink-2: #565b6b;
+  --accent: #c9503f;
+  --line: rgba(35, 38, 47, 0.14);
+  --keep: #2e8f6a;
+  --serif: Georgia, "Times New Roman", "Songti SC", "Source Han Serif SC", "Noto Serif CJK SC", SimSun, serif;
+  --ui: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+  --mono: "Cascadia Code", "SF Mono", Consolas, Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body.reader {
+  margin: 0;
+  background: #12141c;
+  color: var(--ink);
+  font-family: var(--ui);
+}
+
+/* 顶栏 */
+.reader-top { background: #0f1117; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+.reader-top-in {
+  max-width: 1180px; margin: 0 auto; padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+}
+.reader-top .home { color: #d8dce8; text-decoration: none; font-size: 14px; }
+.reader-top .home:hover { color: #fff; }
+.reader-top .crumb { color: rgba(216, 220, 232, 0.55); font-size: 13px; }
+.reader-top .actions { margin-left: auto; display: flex; gap: 8px; flex-wrap: wrap; }
+.reader-top .actions a {
+  color: #d8dce8; font-size: 13px; text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 8px; padding: 5px 12px;
+}
+.reader-top .actions a:hover { border-color: rgba(255, 255, 255, 0.4); }
+
+/* 样章标注横幅 */
+.reader-band { background: #f3e9c9; color: #5c4a1e; }
+.reader-band p {
+  max-width: 980px; margin: 0 auto; padding: 9px 20px;
+  font-size: 13.5px; line-height: 1.7;
+}
+.reader-band a { color: #8a4a12; }
+.reader-band code { font-family: var(--mono); font-size: 12.5px; }
+
+/* 版心：纸张 + 目录 */
+.reader-shell {
+  max-width: 1180px; margin: 0 auto; padding: 26px 20px 40px;
+  display: grid; grid-template-columns: 236px minmax(0, 1fr); gap: 26px;
+  align-items: start;
+}
+.paper {
+  background: var(--paper);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 44px 52px 56px;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.35);
+  font-size: 17.5px;
+  line-height: 1.85;
+  min-width: 0;
+}
+
+/* 目录 */
+.toc-box {
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  position: sticky; top: 18px;
+  font-size: 13.5px;
+}
+.toc-box summary { cursor: pointer; font-weight: 600; color: var(--ink); }
+.toc-box .toc ul { margin: 10px 0 0; padding-left: 14px; list-style: none; }
+.toc-box .toc ul ul { margin-top: 2px; }
+.toc-box .toc li { margin: 5px 0; line-height: 1.5; }
+.toc-box .toc a { color: var(--ink-2); text-decoration: none; }
+.toc-box .toc a:hover { color: var(--accent); }
+
+/* 正文元素 */
+.paper h1, .paper h2, .paper h3, .paper h4 {
+  font-family: var(--serif);
+  line-height: 1.4;
+  color: var(--ink);
+  margin: 1.6em 0 0.6em;
+  scroll-margin-top: 16px;
+}
+.paper h1 { font-size: 27px; margin-top: 0.2em; }
+.paper h2 { font-size: 23px; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
+.paper h3 { font-size: 19.5px; }
+.paper h4 { font-size: 17.5px; }
+.paper p { margin: 0.85em 0; }
+.paper blockquote {
+  margin: 1.1em 0; padding: 10px 18px;
+  border-left: 3px solid var(--accent);
+  background: rgba(201, 80, 63, 0.06);
+  color: var(--ink-2);
+  border-radius: 0 8px 8px 0;
+}
+.paper blockquote p { margin: 0.3em 0; }
+.paper a { color: #1a5dab; text-decoration: underline; text-underline-offset: 2px; word-break: break-all; }
+.paper code {
+  font-family: var(--mono); font-size: 0.85em;
+  background: var(--paper-2); border: 1px solid var(--line);
+  border-radius: 4px; padding: 1px 5px;
+}
+.paper pre {
+  background: #fbfaf6; border: 1px solid var(--line); border-radius: 8px;
+  padding: 12px 14px; overflow-x: auto; font-size: 14px; line-height: 1.6;
+}
+.paper pre code { border: 0; background: none; padding: 0; }
+.paper img { max-width: 100%; height: auto; border: 1px solid var(--line); border-radius: 6px; background: #fff; }
+.paper ul, .paper ol { padding-left: 1.6em; }
+.paper li { margin: 0.35em 0; }
+.paper hr { border: 0; border-top: 1px solid var(--line); margin: 2em auto; width: 60%; }
+.paper sup { font-size: 0.72em; }
+.paper sub { font-size: 0.72em; }
+
+/* 表格：横向滚动，不挤压整页 */
+.tbl-scroll { overflow-x: auto; margin: 1.2em 0; }
+.paper table {
+  border-collapse: collapse; margin: 0 auto;
+  font-size: 15px; line-height: 1.55;
+}
+.paper th, .paper td {
+  border: 1px solid var(--line);
+  padding: 7px 12px;
+  min-width: 76px;
+}
+.paper th { background: var(--paper-2); font-weight: 700; }
+.paper details {
+  background: var(--paper-2); border: 1px solid var(--line);
+  border-radius: 8px; padding: 10px 14px; margin: 1em 0;
+  white-space: pre-line;               /* 保留图内文字的原始换行 */
+  font-size: 14px; color: var(--ink-2);
+}
+.paper details summary {
+  cursor: pointer; font-weight: 600; color: var(--ink);
+  white-space: normal;
+}
+
+/* 公式：显示模式可横向滚动 */
+.paper .katex-display { overflow-x: auto; overflow-y: hidden; padding: 4px 0; }
+.paper .katex { font-size: 1.06em; }
+
+/* 页脚 */
+.reader-foot {
+  max-width: 1180px; margin: 0 auto; padding: 0 20px 44px;
+  color: rgba(216, 220, 232, 0.5); font-size: 12.5px; line-height: 1.8;
+}
+.reader-foot code { font-family: var(--mono); color: rgba(216, 220, 232, 0.75); }
+
+/* 样章目录页 */
+.s-index { display: flex; flex-direction: column; gap: 14px; padding: 34px 40px; }
+.s-card {
+  display: flex; flex-direction: column; gap: 6px;
+  border: 1px solid var(--line); border-radius: 10px;
+  padding: 18px 22px; text-decoration: none; color: var(--ink);
+  background: #fff;
+}
+.s-card:hover { border-color: var(--accent); }
+.s-card b { font-family: var(--serif); font-size: 18.5px; }
+.s-card span { color: var(--ink-2); font-size: 13.5px; }
+.s-card .go { color: var(--accent); font-weight: 600; }
+
+@media (max-width: 900px) {
+  .reader-shell { grid-template-columns: 1fr; padding: 18px 14px 30px; gap: 16px; }
+  .toc-box { position: static; }
+  .toc-box .toc ul { display: none; }
+  .toc-box[open] .toc ul { display: block; }
+  .paper { padding: 26px 20px 36px; font-size: 17px; }
+  .reader-top-in { padding: 10px 14px; }
+}

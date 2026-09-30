@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>academic-pdf-zh · 英文学术 PDF，变成可精读的中文 Markdown</title>
+<meta name="description" content="把英文学术论文 PDF 翻译成保留公式、表格与数字的中文 Markdown。动画演示基于已有样章的真实产物。">
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
+<link rel="stylesheet" href="demo.css">
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="wrap">
+    <span class="wordmark">academic<em>-pdf-zh</em></span>
+    <nav class="topnav">
+      <a href="#samples">样章</a>
+      <a href="#mechanism">机制</a>
+      <a href="#usage">使用</a>
+    </nav>
+  </div>
+</nav>
+
+<header class="masthead wrap">
+  <h1>英文学术 PDF，变成<b>可精读的中文 Markdown</b>。</h1>
+  <p class="sub">全文逐段翻译<span class="sep">·</span>公式、表格与数字保护还原<span class="sep">·</span>结构逐项校验
+    <span class="note">　—— 下方动画基于已有样章的真实产物编排播放</span></p>
+</header>
+
+<section class="player wrap">
+  <div class="stage-wrap">
+    <div class="stage" id="stage">
+      <div class="viewport">
+        <div class="canvas" id="canvas">
+          <div class="paper" id="paperEn">
+            <div class="body-src"><div class="inner"></div></div>
+          </div>
+          <div class="paper mini" id="paperCn">
+            <div class="inner"></div>
+          </div>
+        </div>
+      </div>
+      <div class="endmask" id="endmask">
+        <button class="replay" id="maskReplay">↻ 重播演示</button>
+      </div>
+      <button class="bigplay" id="bigPlay">
+        <span class="disc"><svg width="30" height="34" viewBox="0 0 30 34"><path d="M3 2l25 15L3 32z" fill="#fff"/></svg></span>
+        <span class="label">播放演示 · 36 秒</span>
+      </button>
+      <span class="chip rm-note" id="rmNote">已按系统「减少动态效果」偏好暂停动画：显示最终结果，可随时点播放观看</span>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button class="ctl-btn primary" id="btnPlay" title="播放"></button>
+    <div class="scrub-wrap">
+      <div class="scrub" id="scrub" aria-label="进度">
+        <div class="fill"></div>
+        <div class="knob"></div>
+      </div>
+    </div>
+    <span class="time" id="timeLabel">0:00 / 0:36</span>
+    <span class="chapter-now" id="chapterNow">结果</span>
+    <button class="ctl-btn" id="btnReplay">↻ 重播</button>
+    <a class="linklike" href="player.html" title="无干扰全屏视图，适合录屏">录制视图 ⤢</a>
+  </div>
+
+  <div class="mobile-cta">
+    <a href="player.html">▶ 打开演示动画</a>
+    <span class="tip">36 秒 · 展示英文论文如何变成中文 Markdown</span>
+  </div>
+</section>
+
+<section class="samples wrap" id="samples">
+  <h2 class="sec-h">三个样章，报告可点开核对</h2>
+  <p class="sec-sub">每篇都由完整流水线生成，指标自动摘自各自的 validation.md。</p>
+  <div class="cards" id="cards"></div>
+  <p class="honest"><b>诚实口径：</b>PASS 指三个样章各自的 <code>validation.md</code> 结构终检结果（样章级，非全文翻译完成度）；数量一致不等于语义无误；篇幅比达标不等于没有概括删减。演示动画为基于样章的流程编排，非实时翻译过程。</p>
+</section>
+
+<div class="folds wrap">
+  <details class="fold" id="mechanism">
+    <summary>它是怎么做到的：九个阶段（Phase A–I）流水线与八项终检</summary>
+    <div class="fold-body">
+      <div class="pipe">
+        <div class="step"><div class="n">Phase A–C</div><div class="t">环境体检 · 解析 + 来源审计</div><div class="d">pymupdf4llm / Marker / MinerU 解析 PDF，清点区块、公式、表格、图片，生成 manifest。</div></div>
+        <div class="step"><div class="n">Phase D</div><div class="t">术语表</div><div class="d">先抽取关键术语并定译，全文统一，避免同一个概念前后翻得不一样。</div></div>
+        <div class="step"><div class="n">Phase E</div><div class="t">内容冻结 + 分块</div><div class="d">LaTeX / 代码 / URL / DOI / 数字冻结为 [[IMM_…]] token，表格注册为表格任务，全文切块并加隐藏块 ID。</div></div>
+        <div class="step"><div class="n">Phase F–G</div><div class="t">逐块翻译 · 表格逐格</div><div class="d">正文按块交给 agent 翻译；表格按单元格生成翻译任务，数值格标记保护。</div></div>
+        <div class="step"><div class="n">Phase H</div><div class="t">确定性组装</div><div class="d">按 manifest 清单把译文与 token 原样装回，不经过模型手；表格模板逐格回填。</div></div>
+        <div class="step"><div class="n">Phase I</div><div class="t">八项终检</div><div class="d">八项确定性检查全部通过才输出，任一失败给出可定位的修复任务。</div></div>
+      </div>
+      <ul class="gates">
+        <li>区块序列一致（逐块对应，无漏译/增删）</li>
+        <li>标题层级与数量一致</li>
+        <li>表格结构逐格一致，保护数值原样</li>
+        <li>图片数量与引用完整</li>
+        <li>LaTeX 公式逐条一致（原文 token 还原）</li>
+        <li>代码块 / URL / DOI 不被改写</li>
+        <li>中英篇幅比在合理区间（防概括删减）</li>
+        <li>残留 token / 占位符清零</li>
+      </ul>
+      <pre class="report" id="reportExcerpt"></pre>
+    </div>
+  </details>
+
+  <details class="fold" id="usage">
+    <summary>使用方法与依赖</summary>
+    <div class="fold-body">
+      <ol class="usage-steps">
+        <li>把论文 PDF 放进一个目录，运行 <code>prepare_paper.py</code> 完成解析、审计与分块；</li>
+        <li>在有 agent 能力的 CLI（本项目用 Codex CLI）里逐块翻译正文、按单元格翻译表格；</li>
+        <li>运行 <code>assemble_markdown.py</code> 确定性组装，再跑 <code>validate_markdown.py</code> 终检；</li>
+        <li>终检 PASS 后得到 <code>&lt;论文&gt;_中文.md</code>，可直接放进 Obsidian / 任何 Markdown 阅读器。</li>
+      </ol>
+      <pre class="cmd"><span class="cmt"># 1) 安装 PDF 解析依赖（与 Skill 安装分开；三选一，最轻量起步）</span>
+pip install pymupdf4llm
+<span class="cmt"># 2) 解析 + 结构审计（默认输出 work/&lt;论文名&gt;/；长论文可加 --pages 1-3 试点）</span>
+python scripts/prepare_paper.py paper.pdf --project-root .
+<span class="cmt"># 3) 翻译：在 Codex CLI 中按 chunks/ 逐块翻译、按单元格填表格任务</span>
+python scripts/assemble_markdown.py work/paper/chunks/manifest.json
+<span class="cmt"># 4) 终检（八项守门）</span>
+python scripts/validate_translation.py --manifest work/paper/chunks/manifest.json --source work/paper/source/source_clean.md --translated work/paper/paper_中文.md --report work/paper/validation.md</pre>
+      <pre class="cmd"><span class="cmt"># 本站预览（纯静态，无构建步骤）：在项目根目录运行</span>
+python -m http.server 8000   <span class="cmt"># 然后打开 /docs/ ；样章阅读页在 /docs/samples/</span>
+<span class="cmt"># 阅读页/下载包由 scripts/build_site.py 从 demo/ 产物生成：</span>
+python scripts/build_site.py && python scripts/check_site.py
+<span class="cmt"># 调试/录制动画时可直接跳转到任意时刻：</span>
+docs/player.html?t=21        <span class="accent">window.demo.seek(21)</span></pre>
+    </div>
+  </details>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span class="wordmark">academic<em>-pdf-zh</em></span>
+    <span>本页所有数字、表格与公式均取自 demo/ 下的真实产物文件 · 由 scripts/build_demo_data.py 生成</span>
+  </div>
+</footer>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/katex/katex.min.js"></script>
+<script src="demo-data.js"></script>
+<script src="demo.js"></script>
+</body>
+</html>
